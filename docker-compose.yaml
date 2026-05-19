@@ -226,6 +226,8 @@ services:
   init:
     image: busybox:latest
     command: chown -R 1000:100 /prind/config
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["sleep 3600"]
     volumes:
 #      - .:/prind
       - /srv/dev-disk-by-uuid-ce8cfab5-6ac2-4995-916b-48fb97653e2a/Docker-DATOS/klipper-prind:/prind
