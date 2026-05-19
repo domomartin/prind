@@ -228,7 +228,7 @@ services:
     command: chown -R 1000:100 /prind/config
     volumes:
 #      - .:/prind
-      - ${/srv/dev-disk-by-uuid-ce8cfab5-6ac2-4995-916b-48fb97653e2a/Docker-DATOS/klipper-prind}:/prind
+      - /srv/dev-disk-by-uuid-ce8cfab5-6ac2-4995-916b-48fb97653e2a/Docker-DATOS/klipper-prind:/prind
     labels:
       org.prind.service: init
 
