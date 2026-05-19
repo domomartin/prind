@@ -226,8 +226,8 @@ services:
   init:
     image: busybox:latest
     command: chown -R 1000:100 /prind/config
-    volumes:
-      - .:/prind
+#    volumes:
+#      - .:/prind
     labels:
       org.prind.service: init
 
