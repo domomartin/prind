@@ -35,8 +35,8 @@ services:
     logging:
       driver: none
     depends_on:
-#      init:
-#        condition: service_completed_successfully
+      init:
+        condition: service_completed_successfully
       klipper:
         condition: service_started
     volumes:
@@ -223,13 +223,13 @@ services:
 
   ## Config dir needs to be writable by uid/gid 1000
   ## This container sets the right permissions and exits
-#  init:
-#    image: busybox:latest
-#    command: chown -R 1000:1000 /prind/config
-#    volumes:
-#      - .:/prind
-#    labels:
-#      org.prind.service: init
+  init:
+    image: busybox:latest
+    command: chown -R 1000:100 /prind/config
+    volumes:
+      - .:/prind
+    labels:
+      org.prind.service: init
 
   ## Loadbalancer/Proxy
   traefik:
